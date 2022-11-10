@@ -1,1 +1,11 @@
 <h1>Index</h1>
+
+<%= link_to "create new list", new_list_path %>
+
+<% if @lists.empty? %>
+  <p><%="no list to display"%></p>
+  <% else %>
+<% @lists.each do |i| %>
+<p><%=  link_to i.name, list_path(i.id) %></p>
+  <% end %>
+<% end %>
