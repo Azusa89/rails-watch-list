@@ -10,3 +10,53 @@
 // Your CSS partials
 @import "components/index";
 @import "pages/index";
+
+body {
+  background-color: rgb(10, 10, 10);
+  margin: 0px;
+}
+
+.list_item {
+  overflow: hidden;
+  position: relative;
+  width: 100vw;
+  height: 100px;
+  min-height: 25px;
+  padding: 8px;
+  display: flex;
+  align-items: center;
+  border-top: 1px solid rgba(128, 128, 128, 0.516);
+
+  a {
+    color: white;
+    text-shadow: 4px 4px 4px rgba(0, 0, 0, 0.54);
+    text-decoration: none;
+    font-size: xx-large;
+    font-weight: 600;
+    z-index: 2;
+  }
+}
+
+.list_item::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+  background-image: image-url("pexels-obregonia-d-toretto-918281.jpg");
+  background-repeat: no-repeat;
+  background-position: 50%;
+  background-size: cover;
+  filter: blur(8px);
+  opacity: 0.5;
+}
+
+.list_item:hover::before {
+  filter: blur(0);
+  opacity: 1;
+  transition: 0.5s;
+  transform: scale(120%);
+  translate: 10%;
+}
