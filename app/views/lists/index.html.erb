@@ -3,12 +3,12 @@
   <% if @lists.empty? %>
     <%="no list to display"%>
     <% else %>
-  <% @lists.each do |i| %>
-  <%=  link_to list_path(i.id) do %>
+  <% @lists.each do |list| %>
+  <%=  link_to list_path(list) do %>
     <div class="list_item">
-      <div class="list_item_bg"style= "background-image: url('<%= i.photo.attached? ? cl_image_path(i.photo.key) : image_path('pexels-obregonia-d-toretto-918281.jpg') %>')">
+      <div class="list_item_bg"style= "background-image: url('<%= list.photo.attached? ? cl_image_path(list.photo.key) : image_path('pexels-obregonia-d-toretto-918281.jpg') %>')">
       </div>
-      <div class="list_item_content"><%= i.name %></div>
+      <div class="list_item_content"><%= list.name %></div>
       <% end %>
     </div>
   <% end %>
