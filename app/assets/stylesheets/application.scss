@@ -49,50 +49,77 @@ body {
 }
 
 .list_item {
-  overflow: hidden;
   position: relative;
+  overflow: hidden;
   width: 70%;
   min-width: 600px;
   height: 100px;
   min-height: 25px;
   padding: 8px;
   display: flex;
-  align-items: center;
-  border-top: 1px solid rgba(128, 128, 128, 0.516);
-
-  a {
-    color: white;
-    text-shadow: 4px 4px 4px rgba(0, 0, 0, 0.54);
-    text-decoration: none;
-    font-size: xx-large;
-    font-weight: 600;
-    z-index: 2;
-  }
 }
 
-.list_item::before {
-  content: "";
-  position: absolute;
-  left: 0;
-  top: 0;
+.list_item_bg {
   width: 100%;
   height: 100%;
-  box-sizing: border-box;
-  background-image: image-url("pexels-obregonia-d-toretto-918281.jpg");
+  overflow: hidden;
+  position: absolute;
+  align-items: center;
   background-repeat: no-repeat;
-  background-position: 50%;
+  background-position: 50% 50%;
   background-size: cover;
-  filter: blur(8px);
+  border-top: 1px 1px solid rgba(128, 128, 128, 0.516);
+  border-bottom: 1px 1px solid rgba(128, 128, 128, 0.516);
   opacity: 0.5;
+  filter: blur(4px);
 }
 
-.list_item:hover::before {
+.list_item_bg:hover {
   filter: blur(0);
   opacity: 1;
   transition: 0.5s;
   transform: scale(120%);
   translate: 10%;
+  border-top: 4px 4px solid rgba(128, 128, 128, 0.516);
+  border-bottom: 4px 4px solid rgba(128, 128, 128, 0.516);
 }
+
+.list_item_content {
+  margin: 0;
+  position: absolute;
+  left: 10%;
+  top: 50%;
+  text-align: center;
+  color: white;
+  text-shadow: 4px 4px 4px rgba(0, 0, 0, 0.54), -4px -4px 4px rgb(0, 0, 0);
+  text-decoration: none;
+  font-size: xx-large;
+  font-weight: 600;
+  z-index: 9999;
+}
+.list_item_bg:hover ~ .list_item_content {
+  transition: 0.5s;
+  transform: scale(120%);
+  translate: 10%;
+  font-size: xx-large;
+  font-weight: 900;
+  left: 0;
+  text-shadow: 4px 4px 8px rgb(0, 0, 0), -4px -4px 8px rgb(0, 0, 0);
+}
+// .list_item::before {
+//   content: "";
+//   position: absolute;
+//   left: 0;
+//   top: 0;
+//   width: 100%;
+//   height: 100%;
+//   box-sizing: border-box;
+//   background-repeat: no-repeat;
+//   background-position: 50%;
+//   background-size: cover;
+// filter: blur(8px);
+// opacity: 0.5;
+// }
 
 .content {
   color: white;

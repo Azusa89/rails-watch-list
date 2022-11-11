@@ -4,9 +4,12 @@
     <%="no list to display"%>
     <% else %>
   <% @lists.each do |i| %>
-      <div class="list_item">
-        <%=  link_to  i.name , list_path(i.id) %>
+  <%=  link_to list_path(i.id) do %>
+    <div class="list_item">
+      <div class="list_item_bg"style= "background-image: url('<%= i.photo.attached? ? cl_image_path(i.photo.key) : image_path('pexels-obregonia-d-toretto-918281.jpg') %>')">
       </div>
+      <div class="list_item_content"><%= i.name %></div>
       <% end %>
-    <% end %>
-</nav>
+    </div>
+  <% end %>
+<% end %>
