@@ -1,5 +1,4 @@
-<h1>list show</h1>
-
+<div class="content">
 <p><%= @list.name %></p>
 
 
@@ -14,3 +13,4 @@ data: {turbo_method: :delete, turbo_confirm: "Delete #{bookmark.movie.title}?" }
 
 <%= link_to "Add movie", new_list_bookmark_path(@list) %>
 <%= link_to "back", lists_path %>
+</div>

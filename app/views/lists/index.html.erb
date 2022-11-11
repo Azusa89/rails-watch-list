@@ -1,7 +1,5 @@
-<h1>Index</h1>
-
-<%= link_to "create new list", new_list_path %>
 <nav class="home">
+<%= link_to new_list_path do %><div class="new_list_button">+</div><% end %>
   <% if @lists.empty? %>
     <%="no list to display"%>
     <% else %>
